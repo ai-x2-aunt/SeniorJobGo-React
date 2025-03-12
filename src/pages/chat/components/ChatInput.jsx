@@ -23,7 +23,7 @@ const ChatInput = ({
               disabled={isBotResponding}
             >
               <span className="material-symbols-rounded">mic</span>
-              음성으로 검색하기
+              음성으로 대화하기
             </button>
             <button
               className={`${styles.button} ${styles.smallButton}`}

@@ -449,6 +449,14 @@ const IntentModal = ({ isOpen, onClose, onSubmit, initialMode }) => {
           // 음성 입력 화면
           <div className={styles.voiceMode}>
             <div className={styles.recordingSection}>
+              {/* 음성입력 모드 - 안내 문구 추가 */}
+              <div className={styles.recordingInstructions}>
+                <h2>음성입력 모드</h2>
+                <p>
+                  녹음 시작 버튼을 누르시면 음성 입력이 시작됩니다. <br />
+                  말씀이 끝난 후 하단의 <strong>녹음 완료</strong> 버튼을 눌러주세요.
+                </p>
+              </div>
               <div
                 className={`${styles.recordingIndicator} ${isListening ? styles.active : ''}`}
                 onClick={async (e) => {
@@ -461,19 +469,17 @@ const IntentModal = ({ isOpen, onClose, onSubmit, initialMode }) => {
                   }
                 }}
               >
+                <span className="material-symbols-rounded">mic</span>
+                {/* 녹음 중일 때 "녹음 종료" 문구 추가 */}
                 {isListening ? (
-                  <span className="material-symbols-rounded">mic</span>
+                  <span className={styles.stopRecordingText}>녹음 취소</span>
                 ) : (
-                  <>
-                    <span className="material-symbols-rounded">mic</span>
-                    녹음 시작
-                  </>
+                  <>녹음 시작</>
                 )}
               </div>
               {isListening && (
                 <div className={styles.transcript}>
-                  <h4>음성 인식 중...</h4>
-                  <p>{transcript || "말씀해 주세요..."}</p>
+                  <p>{transcript || "음성 인식 중..."}</p>
                   <button
                     className={styles.confirmRecording}
                     onClick={handleRecordingComplete}

@@ -19,8 +19,10 @@
   background: $white-color;
   padding: 1.6rem;
   border-radius: $radius-lg;
-  width: 90%;
-  max-width: 700px;
+  // width: 90%;
+  width: 40%;
+  // max-width: 700px;
+  max-width: 650px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -71,7 +73,7 @@
 // 모드 선택 화면
 .modeSelection {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   margin-bottom: 2rem;
 
   .introContainer {
@@ -84,7 +86,7 @@
     text-align: center;
     font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.3;
     color: $text-title-color;
 
@@ -160,8 +162,8 @@
 }
 
 .modeButton {
-  width: 240px;
-  height: 140px;
+  width: 220px;
+  height: 125px;
   border-radius: $radius-lg;
   border: none;
   font-size: $font-size-18;
@@ -181,25 +183,24 @@
     font-size: $font-size-16;
   }
 
+  // 음성 모드 버튼
   &:first-child {
-    background-color: #816339;
-    // background-color: #9d8537;
-    // background-color: #8f7746;
-    background-color: #e26545;
+    background-color: #909ccb;
     color: $white-color;
 
     &:hover {
-      background-color: #cb5b3e;
+      background-color: #7b85ab;
       transform: translateY(-2px);
     }
   }
 
+  // 입력 모드 버튼
   &:last-child {
-    background-color: #36558e;
+    background-color: #2D336B;
     color: $white-color;
 
     &:hover {
-      background-color: #314d80;
+      background-color: #222750;
       transform: translateY(-2px);
     }
   }
@@ -250,9 +251,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  // padding: 1.5rem;
+  gap: 0.5rem;
 }
 
+// 음성 입력 모드
+.recordingInstructions {
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+  min-width: 400px;
+  color: $text-color;
+
+  h2 {
+    text-align: center;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1.3rem;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: $font-size-18;
+    font-weight: $font-weight-normal;
+    color: $secondary-text-color;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    white-space: pre-line;
+
+    strong {
+      // color: $primary-color-dark;
+      // color: $text-color;
+      color: $secondary-accent-color;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-size-16;
+  }
+}
+
+// 녹음 시작 버튼
 .recordingIndicator {
   width: 150px;
   height: 150px;
@@ -265,13 +305,20 @@
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  border: 3px solid #627efa;
-  font-size: 0.9rem;
-  color: #627efa;
+  border: 3px solid #5DB996;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-18;
+  color: $white-color;
+  background-color: #5DB996;
   gap: 0.5rem;
 
   span {
     font-size: 2.5rem;
+    font-weight: $font-weight-medium;
+  }
+
+  .stopRecordingText {
+    font-size: $font-size-18;
   }
 
   @media (max-width: 768px) {
@@ -284,10 +331,10 @@
     }
   }
 
-  &.active {
-    background-color: #dc3545;
+  &.active { // 녹음 활성화 버튼
+    background-color: #EE4E4E;
     color: $white-color;
-    border-color: #dc3545;
+    border-color: #EE4E4E;
     animation: pulse 1.5s infinite;
 
     &::before {
@@ -296,7 +343,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 3px solid #dc3545;
+      border: 3px solid #EE4E4E;
       animation: ripple 1.5s infinite;
     }
   }
@@ -338,7 +385,6 @@
   }
 
   p {
-    color: $text-color;
     line-height: 1.5;
     margin-bottom: 1rem;
     min-height: 3em;
@@ -346,13 +392,15 @@
     background: $white-color;
     border-radius: $radius-md;
     border: 1px solid $border-color;
+    color: $secondary-text-color;
   }
 
+  // 녹음 완료 버튼
   .confirmRecording {
     width: 100%;
     padding: 12px;
     margin-top: 16px;
-    background-color: #74c98e;
+    background-color: #5DB996;
     color: $white-color;
     border: none;
     border-radius: $radius-md;
@@ -366,7 +414,7 @@
     gap: 0.5rem;
 
     &:hover {
-      background-color: #218838;
+      background-color: #5DB996;
       transform: translateY(-1px);
     }
 
@@ -496,7 +544,7 @@
 
 .confirmButton {
   background-color: #28a745;
-  color: white;
+  color: $white-color;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -667,7 +715,7 @@
     height: 0;
 
     &:checked + .slider {
-      background-color: #34C759;
+      background-color: $primary-color-dark;
 
       // 활성화 상태일 때 텍스트 위치 조정
       .toggleText {
