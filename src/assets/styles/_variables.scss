@@ -1,17 +1,17 @@
 // 색상 관련
 $primary-color: #f7d787;
-$primary-color-2: #f8bd6a;
+$primary-color-dark: #f8bd6a;
 $primary-hover-color: #ed6444;
 $secondary-color: #f9e1c7;
 $secondary-hover-color: #f1b874;;
 $secondary-accent-color: #f2af5c;
 $text-color: #222;
 $text-title-color: #333;
-$text-subheading-color: #97a7ca;
+$text-subtitle-color: #97a7ca;
 $secondary-text-color: #666;
 $secondary-text-grey: #616060;
 $background-color: #fff;
-$card-color: #f3f7ff;
+$card-background: #f3f7ff;
 
 $border-color: #b6b6b6;
 $border-active-color: #ffbc2c;
@@ -19,7 +19,7 @@ $border-light-color: #e1e1e1;
 $placeholder-color: #b6b6b6;
 $icon-color: #999;
 $white-color: #fff;
-$message-color: rgb(252, 241, 217);
+$message-background: rgb(252, 241, 217);
 $danger-color: #d62939;
 $accent-color: #ff4d4d;
 
@@ -31,13 +31,14 @@ $font-size-base: 15px;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 15px;
+$font-size-xxl: 30px;
+
 $font-size-16: 16px;
 $font-size-18: 18px;
 $font-size-20: 20px;
 $font-size-22: 22px;
 $font-size-lg: 24px;
 $font-size-26: 26px;
-$font-size-xxl: 30px;
 $font-size-32: 32px;
 $font-size-40: 40px;
 $font-size-42: 42px;
@@ -46,19 +47,20 @@ $font-size-52: 52px;
 
 $font-icon-xs: 18px;
 $font-icon-sm: 20px;
-$font-icon-base: 28px;
+$font-icon-md: 28px;
+
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 // 모서리 관련
-$radius-sm: 4px;   // 작은 둥근 모서리
-$radius-md: 8px;   // 중간 둥근 모서리
-$radius-lg: 12px;  // 큰 둥근 모서리
-$radius-xl: 16px;  // 매우 큰 둥근 모서리
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
 $radius-xxl: 20px;
-$radius-round: 50%; // 완전 원형 (버튼, 프로필 이미지 등)
+$radius-circle: 50%;
 
 // Light Mode Theme
 $light-primary-color: #f3f7ff;

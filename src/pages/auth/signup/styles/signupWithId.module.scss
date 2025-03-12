@@ -35,7 +35,7 @@
     i {
       position: absolute;
       left: 0;
-      font-size: $font-icon-base;
+      font-size: $font-icon-md;
       cursor: pointer;
     }
   }
@@ -167,7 +167,7 @@
       width: 16px;
       height: 16px;
       border: 1px solid $border-color;
-      border-radius: $radius-round;
+      border-radius: $radius-circle;
       cursor: pointer;
       appearance: none;
       

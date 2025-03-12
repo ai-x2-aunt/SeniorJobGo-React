@@ -68,7 +68,7 @@
     right: -65px;
     top: 0;
     background-color: $primary-color;
-    border-radius: $radius-round;
+    border-radius: $radius-circle;
     opacity: 0.3;
     animation: float 6s ease-in-out infinite;
   }
@@ -80,7 +80,7 @@
     left: -60px;
     bottom: 80px;
     background-color: $primary-color;
-    border-radius: $radius-round;
+    border-radius: $radius-circle;
     opacity: 0.3;
     animation: float 7s ease-in-out infinite;
   }
@@ -92,7 +92,7 @@
     right: -50px;
     bottom: 20px;
     background-color: $primary-color;
-    border-radius: $radius-round;
+    border-radius: $radius-circle;
     opacity: 0.3;
     animation: float 7s ease-in-out infinite;
   }

@@ -12,6 +12,8 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
     
     // 운영 요일 확인
     const operatingDays = meal.operatingDays?.split('+').map(day => day.trim()) || [];
+    console.log('운영 요일: ', operatingDays);
+    console.log('현재 요일: ', currentDay);
     const isOperatingDay = operatingDays.includes(currentDay);
     
     if (!isOperatingDay) {

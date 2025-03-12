@@ -94,7 +94,7 @@
 
     .highlighted {
       text-decoration: underline;
-      text-decoration-color: $primary-color-2;
+      text-decoration-color: $primary-color-dark;
       text-decoration-thickness: 3px;
     }
   }
@@ -231,7 +231,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: $radius-round;
+    border-radius: $radius-circle;
     transition: background-color .2s ease;
     z-index: 10;
 
@@ -256,7 +256,7 @@
 .recordingIndicator {
   width: 150px;
   height: 150px;
-  border-radius: $radius-round;
+  border-radius: $radius-circle;
   background-color: $color-background-light;
   display: flex;
   flex-direction: column;
@@ -407,7 +407,7 @@
     width: 12px;
     height: 12px;
     border: 2px solid $secondary-text-grey;
-    border-radius: $radius-round;
+    border-radius: $radius-circle;
     border-top-color: transparent;
     animation: spin 1s linear infinite;
   }
