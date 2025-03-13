@@ -22,7 +22,6 @@ const ChatMessage = ({
   isLast
 }) => {
   console.log('ChatMessage - 전체 메시지 데이터:', message);
-  console.log('ChatMessage - 급식소 데이터:', message.mealPostings);
 
   const isBot = message.role === "bot";
   const isUser = message.role === "user";
