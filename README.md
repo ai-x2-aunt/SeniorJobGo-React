@@ -1,3 +1,14 @@
+# positalk
+- 고령층 맞춤 일자리부터 복지 정보까지, 시니어를 위한 AI 챗봇 서비스입니다.
+
+
+![시니어잡고 이미지](./images/Senior_JobGo.png)
+
+
+## 프로젝트 진행 기간📅
+- 2025.01.08 ~ 2025.02.21
+
+
 ### 개발환경
 
 1. 프로젝트 환경설정(vite를 활용한 React 설치) : `npm install vite@latest` <br />
