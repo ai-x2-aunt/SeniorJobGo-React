@@ -5,13 +5,13 @@ import styles from '../styles/commonCard.module.scss';
 const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
   console.log('MealCard - 받은 급식소 데이터:', meal);
 
-  // 운영 상태를 계산하는 함수
+  // 현재 운영 상태를 계산하는 함수
   const getOperationStatus = () => {
     const now = new Date();
     const currentDay = ['일', '월', '화', '수', '목', '금', '토'][now.getDay()];
     
     // 운영 요일 확인
-    const operatingDays = meal.operatingDays?.split('+').map(day => day.trim()) || [];
+    const operatingDays = meal.description?.split('+').map(day => day.trim()) || [];
     console.log('운영 요일: ', operatingDays);
     console.log('현재 요일: ', currentDay);
     const isOperatingDay = operatingDays.includes(currentDay);
