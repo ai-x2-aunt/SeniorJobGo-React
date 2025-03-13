@@ -102,3 +102,82 @@
     background: color.adjust($primary-color, $lightness: -5%);
   }
 } 
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 1.5rem;
+    max-width: 420px; // 태블릿에서 최대 폭 조정
+  }
+
+  h2 {
+    font-size: $font-size-md;
+  }
+
+  .guideList {
+    gap: 0.8rem;
+  }
+
+  .guideItem {
+    padding: 0.8rem;
+    
+    span {
+      font-size: $font-size-md;
+    }
+  }
+
+  .guideText {
+    h3 {
+      font-size: $font-size-16;
+    }
+
+    p {
+      font-size: $font-size-sm;
+    }
+  }
+
+  .closeButton {
+    font-size: $font-size-sm;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .modalContent {
+    width: 90%;
+    padding: 1.2rem;
+    max-width: 380px; // iPhone 14 Pro Max 기준 최대 폭 조정
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .guideItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    span {
+      font-size: $font-size-42;
+    }
+  }
+
+  .guideText {
+    h3 {
+      font-size: $font-size-20;
+      font-weight: $font-weight-medium;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: $font-size-16;
+      line-height: 1.4;
+    }
+  }
+
+  .closeButton {
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-size: $font-size-16;
+  }
+}
