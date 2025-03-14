@@ -149,7 +149,7 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
           {meal.address}
         </div>
         <div className={styles.mealCard__detail}>
-          <WeekdayDisplay dateStr={meal.description} />
+          {/* <WeekdayDisplay dateStr={meal.description} /> */}
         </div>
       </div>
 
@@ -159,7 +159,7 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
         <p data-label="주소">{meal.address}</p>
         <p data-label="전화번호">{meal.phone || '정보 없음'}</p>
         <p data-label="운영시간">{meal.operatingHours}</p>
-        <p data-label="급식대상">{meal.targetGroup}</p>
+        {/* <p data-label="급식대상">{meal.targetGroup}</p> */}
         <p data-label="운영요일">
           <WeekdayDisplay dateStr={meal.description} />
         </p>

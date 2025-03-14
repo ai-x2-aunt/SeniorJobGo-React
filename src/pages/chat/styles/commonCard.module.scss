@@ -55,10 +55,12 @@
   &__location {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     color: $secondary-accent-color;
+    color: #7E99A3;
     font-size: $font-size-md;
-    font-weight: $font-weight-medium;
+    border-top: 1px solid $border-light-color;
+    padding-top: 8px;
 
     span {
       font-size: $font-size-20;
@@ -100,7 +102,7 @@
     display: none;
     margin-top: 16px;
     padding: 16px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-light-color;
     background: $color-background-light;
     border-radius: $radius-md;
     transition: all 0.3s ease;
@@ -145,7 +147,7 @@
     display: none;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-light-color;
 
     &.visible {
       display: block;
@@ -269,7 +271,7 @@
     display: none;
     margin-top: 16px;
     padding: 16px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-light-color;
     background: $color-background-light;
     border-radius: $radius-md;
 

@@ -28,7 +28,7 @@ const JobCard = ({ job, onClick, isSelected, cardRef }) => {
         </div>
       </div>
       <div className={styles.jobCard__location}>
-        <span className={`material-symbols-rounded`}>location_on</span>
+        {/* <span className={`material-symbols-rounded`}>location_on</span> */}
         {job.location}
       </div>
 
