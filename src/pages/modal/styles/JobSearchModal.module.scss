@@ -184,6 +184,14 @@
       cursor: not-allowed;
     }
   }
+
+  @media (max-width: 430px) {
+    gap: 6px;
+    .ageButton {
+      padding: 10px 6px;
+      font-size: $font-size-sm;
+    }
+  }
 }
 
 .genderButtons {

@@ -42,6 +42,10 @@ body {
     max-width: 980px;
   }
 
+  @media(max-width: 430px) {
+    padding: 15px 0;
+  }
+
   .appHeader {
     margin-top: 4vh;
 
@@ -56,6 +60,10 @@ body {
       @media (max-width: 768px) {
         font-size: $font-size-48;
       }
+
+      @media (max-width: 430px) {
+        font-size: $font-size-42;
+      }
     }
 
     .subHeading {
@@ -66,6 +74,14 @@ body {
       @media (max-width: 768px) {
         font-size: $font-size-42;
       }
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 2vh;
+    }
+
+    @media (max-width: 430px) {
+      margin-top: 2vh;
     }
   }
 
@@ -115,11 +131,17 @@ body {
           font-weight: $font-weight-medium;
           color: $text-title-color;
           margin-bottom: 12px;
+          @media (max-width: 430px) {
+            font-size: $font-size-18;
+          }
         }
 
         .description {
           font-size: $font-size-16;
           color: $text-subtitle-color;
+          @media (max-width: 430px) {
+            font-size: $font-size-16;
+          }
         }
       }
 
@@ -145,6 +167,10 @@ body {
         }
       }
     }
+
+    @media (max-width: 430px) {
+      margin-top: 4vh;
+    }
   }
 
   .chatsContainer {
@@ -153,6 +179,10 @@ body {
     flex-direction: column;
     overflow-y: auto;
     scroll-behavior: smooth;
+
+    @media (max-width: 430px) {
+      gap: 8px;
+    }
 
     .message {
       margin-bottom: 0.75rem;
@@ -208,6 +238,11 @@ body {
           color: $light-text-color;
           font-size: $font-size-md;
           line-height: 1.5;
+
+          @media (max-width: 430px) {
+            max-width: 85%;
+            font-size: $font-size-md;
+          }
         }
       }
     }
@@ -233,9 +268,10 @@ body {
           font-size: $font-size-16;
           font-weight: $font-weight-semibold;
           color: $text-color;
-          margin: 16px 0 12px;
-          padding-bottom: 8px;
-          border-bottom: 1px solid rgba(0, 0, 0, .1);
+          // margin: 10px 0 12px;
+          margin-top: 1px;
+          padding-bottom: 3px;
+          // border-bottom: 1px solid rgba(0, 0, 0, .1);
           
           &:first-child {
             margin-top: 4px;
@@ -249,7 +285,7 @@ body {
           word-break: break-word;
 
           &:first-of-type {
-            margin-top: 8px;
+            // margin-top: 8px;
           }
         }
 
@@ -335,9 +371,10 @@ body {
 
       // Reference section
       h3:first-of-type {
-        margin-top: 1rem;
-        padding-top: 0.75rem;
-        border-top: 1px solid #e2e8f0;
+        // margin-top: 1rem;
+        // padding: 0 2px;
+        // padding-top: 0.75rem;
+        // border-top: 1px solid #e2e8f0;
       }
 
       // 마크다운 요소 스타일링
@@ -356,7 +393,7 @@ body {
         margin-top: -5px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        // gap: 10px;
       }
 
       .trainingList {
@@ -454,14 +491,14 @@ body {
         }
       }
 
-      // 인풋이 valid하면 send-prompt-btn 보이도록 (input과 promptActions는 인접 형제)
+      // 인풋이 valid하면 send-prompt-btn 보이도록
       .promptInput:valid + .promptActions {
         .sendPromptBtn {
           display: block;
         }
       }
 
-      // 기본적으로 stop-response 버튼은 숨김
+      // 기본적으로 stop-response 버튼 숨김
       .stopResponseBtn {
         display: none;
       }
