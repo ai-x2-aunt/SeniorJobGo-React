@@ -78,53 +78,76 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
   const operationStatus = getOperationStatus();
 
   // 요일 문자열을 포맷팅하는 함수 - 요일별 운영 여부 표시용
-  const formatWeekDays = (dateStr) => {
-    if (!dateStr) return null;
+  // const formatWeekDays = (dateStr) => {
+  //   if (!dateStr) return null;
 
-    const weekdays = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
-    // 요일 약자('월', '화' 등)를 전체 이름('월요일', '화요일' 등)으로 변환
-    const operatingDays = dateStr.split('+').map(day => {
-      const dayMap = {
-        '월': '월요일',
-        '화': '화요일',
-        '수': '수요일',
-        '목': '목요일',
-        '금': '금요일',
-        '토': '토요일',
-        '일': '일요일'
-      };
+  //   const weekdays = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+  //   // 요일 약자('월', '화' 등)를 전체 이름('월요일', '화요일' 등)으로 변환
+  //   const operatingDays = dateStr.split('+').map(day => {
+  //     const dayMap = {
+  //       '월': '월요일',
+  //       '화': '화요일',
+  //       '수': '수요일',
+  //       '목': '목요일',
+  //       '금': '금요일',
+  //       '토': '토요일',
+  //       '일': '일요일'
+  //     };
 
-      return dayMap[day.trim()] || day.trim();
-    })
+  //     return dayMap[day.trim()] || day.trim();
+  //   })
     
 
-    // 각 요일별 운영 여부 정보를 담은 객체 배열 반환
+  //   // 각 요일별 운영 여부 정보를 담은 객체 배열 반환
+  //   return weekdays.map(day => ({
+  //     day,
+  //     isOperating: operatingDays.some(d => d.includes(day))
+  //   }));
+  // };
+
+  // 요일 문자열을 포맷팅 - 요일별 운영 여부 표시
+  const formatWeekDays = (dateStr) => {
+    if(!dateStr) return null;
+
+    const weekdays = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+    const dayMap = {
+      '월': '월요일', '화': '화요일', '수': '수요일', '목': '목요일', '금': '금요일', '토': '토요일', '일': '일요일'
+    };
+
+    const operatingDays = dateStr.split('+').map(day => dayMap[day.trim()] || day.trim());
+
     return weekdays.map(day => ({
       day,
-      isOperating: operatingDays.some(d => d.includes(day))
+      isOperating: operatingDays.includes(day)
     }));
   };
 
+  // mealCard 내부에서 weekdayInfo
+  const weekdayInfo = formatWeekDays(meal.description);
+
   // 요일 표시 컴포넌트 - 내부 컴포넌트로 정의
-  const WeekdayDisplay = ({ dateStr }) => {
-    const weekdayInfo = formatWeekDays(dateStr);
+  // const WeekdayDisplay = ({ dateStr }) => {
+  //   const weekdayInfo = formatWeekDays(dateStr);
     
-    if (!weekdayInfo) return null;
+  //   if (!weekdayInfo) return null;
 
     // 요일별 운영 여부를 시각적으로 표시
-    return (
-      <div className={styles.mealCard__weekdays}>
-        {weekdayInfo.map(({ day, isOperating }) => (
-          <span
-            key={day}
-            className={`${styles.weekdayBox} ${isOperating ? styles.active : styles.inactive}`}
-          >
-            {day}
-          </span>
-        ))}
-      </div>
-    );
-  };
+  //   return (
+  //     <div className={styles.mealCard__weekdays}>
+  //       {weekdayInfo.map(({ day, isOperating }) => (
+  //         // <span
+  //         //   key={day}
+  //         //   className={`${styles.weekdayBox} ${isOperating ? styles.active : styles.inactive}`}
+  //         // >
+  //         //   {day}
+  //         // </span>
+  //         <span key={day} className={`${styles.weekdayBox} ${isOperating ? styles.active : styles.inactive}`}>
+  //           {day}
+  //         </span>
+  //       ))}
+  //     </div>
+  //   );
+  // };
 
   return (
     <div
@@ -151,7 +174,21 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
         <div className={styles.mealCard__detail}>
           {/* <WeekdayDisplay dateStr={meal.description} /> */}
         </div>
+
+        {/* pc에서는 버튼 UI 유지 */}
+        <div className={styles.mealCard__weekdays}>
+          {weekdayInfo.map(({ day, isOperating }) => (
+            <span key={day} className={`${styles.weekdayBox} ${isOperating ? styles.active : styles.inactive}`}>
+              {day}
+            </span>
+          ))}
+        </div>
       </div>
+
+      {/* 모바일에서는 운영 요일을 텍스트로 표시 */}
+      <p className={styles.mealCard__operatingText}>
+        {weekdayInfo.filter(({ isOperating }) => isOperating).map(({ day }) => day).join(', ')} 운영
+      </p>
 
       {/* 확장된 상세 정보 - 선택 시에만 표시 */}
       <div className={`${styles.mealCard__description} ${isSelected ? styles.visible : ''}`}>
@@ -161,7 +198,8 @@ const MealCard = ({ meal, onClick, isSelected, cardRef }) => {
         <p data-label="운영시간">{meal.operatingHours}</p>
         {/* <p data-label="급식대상">{meal.targetGroup}</p> */}
         <p data-label="운영요일">
-          <WeekdayDisplay dateStr={meal.description} />
+          {/* <WeekdayDisplay dateStr={meal.description} /> */}
+              {weekdayInfo.filter(({ isOperating }) => isOperating).map(({ day }) => day).join(', ')} 운영
         </p>
       </div>
     </div>
